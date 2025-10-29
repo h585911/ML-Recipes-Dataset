@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { IngredientForm } from "./components/IngredientForm";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="flex-1 h-full min-w-0 min-h-screen flex flex-col items-center justify-center relative bg-background">
+      <div className="absolute top-5 right-5">
+        <ThemeToggle />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+        <div className="w-full max-w-2xl space-y-12">
+          <div className="text-center space-y-1">
+            <h1 className="text-3xl font-medium tracking-tight text-foreground">
+              Recipe Finder
+            </h1>
+            <p className="text-muted-foreground text-sm mt-1.5">
+              Enter your ingredients and discover delicious recipes
+            </p>
+          </div>
+          <IngredientForm />
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </main>
+  );
 }
-
-export default App
+export default App;

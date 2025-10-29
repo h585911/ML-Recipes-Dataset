@@ -14,8 +14,27 @@ warnings.filterwarnings('ignore')
 sns.set_style('whitegrid')
 plt.rcParams['figure.figsize'] = (12, 6)
 
-print("Loading dataset...")
+print("Laster datasett...")
 df = pd.read_csv('data/recipes.csv')
 
-print("\nColumn names and types:")
-print(df.dtypes)
+print("\n" + "="*80)
+print("PREPROSESSERING AV DATA")
+print("="*80)
+
+df_clean = df.copy()
+
+df_clean['description'] = df_clean['description'].fillna('')
+df_clean['ingredients'] = df_clean['ingredients'].fillna('')
+df_clean['directions'] = df_clean['directions'].fillna('')
+df_clean['category'] = df_clean['category'].fillna('')
+df_clean['subcategory'] = df_clean['subcategory'].fillna('')
+
+df_clean = df_clean[df_clean['category'] != '']
+
+print(f"\nDatasettets størrelse etter rengjøring: {df_clean.shape}")
+
+tfidf_ingredients = TfidfVectorizer(
+    max_features=100,
+    stop_words='english',
+    ngram_range=(1, 2)
+)

@@ -2,7 +2,7 @@
 
 ## Installasjon
 Først lag et virtual environment ved å kjøre følgende kommando i terminalen:
-`python -m venv env`
+`python -m venv venv`
 
 Deretter installere du nødvendige pakker ved å kjøre følgende kommando i terminalen:
 `pip install pandas numpy sentence-transformers scikit-learn flask flask-cors`

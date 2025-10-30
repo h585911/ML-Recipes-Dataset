@@ -57,7 +57,7 @@
 }
 
 :root {
-    --radius: 0.625rem;
+    --radius: 0rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -143,4 +143,14 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+::selection {
+    background-color: var(--color-neutral-950);
+    color: var(--color-neutral-50)
+}
+
+.dark ::selection {
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-950)
 }

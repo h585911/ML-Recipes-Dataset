@@ -73,7 +73,7 @@ export function RecipeDetailDialog({
 
         <div className="flex-1 overflow-y-auto px-7 py-7 space-y-8">
           <div className="space-y-3">
-            <h3 className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+            <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider font-mono">
               Ingredients
             </h3>
             <div className=" bg-muted/20 rounded-lg p-4 border ring-white/10">
@@ -92,7 +92,7 @@ export function RecipeDetailDialog({
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+            <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider font-mono">
               Instructions
             </h3>
             <div className="space-y-1">

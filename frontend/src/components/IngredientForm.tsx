@@ -100,7 +100,7 @@ export function IngredientForm() {
         <div className="space-y-1.5">
           <h2 className="text-base font-medium text-foreground">Ingredients</h2>
           <p className="text-sm text-muted-foreground">
-            Add your ingredients to get started
+            Add your ingredients you have sitting around
           </p>
         </div>
 

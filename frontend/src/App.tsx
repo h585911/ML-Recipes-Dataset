@@ -8,10 +8,10 @@ function App() {
         <div className="w-full max-w-2xl space-y-12">
           <div className="text-center space-y-1">
             <h1 className="text-3xl font-medium tracking-tight text-foreground">
-              Recipe Finder
+              ML Recipe Finder
             </h1>
             <p className="text-muted-foreground text-sm mt-1.5">
-              Enter your ingredients and discover delicious recipes
+              Enter ingredients you have sitting around and discover recipe ideas
             </p>
           </div>
           <IngredientForm />

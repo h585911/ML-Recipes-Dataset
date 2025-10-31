@@ -28,7 +28,7 @@ def load_and_prepare_data(csv_path):
     print("Laster embedding model")
     model = SentenceTransformer("all-MiniLM-L6-v2")
 
-    print("Lager embeddrings for alle oppskrifter...")
+    print("Lager embeddrings for alle oppskrifter (dette kan ta litt tid)...")
     recipe_embeddings = model.encode(
         recipes_df["ingredients"].tolist(), show_progress_bar=True, batch_size=32
     )

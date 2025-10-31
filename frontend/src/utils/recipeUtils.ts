@@ -7,9 +7,15 @@ export const parseIngredients = (ingredientsStr: string): string[] => {
   return ingredientsStr
     .split('",')
     .map((i) => {
-      let cleaned = i.replace(/^[\["\s]+|["\]\s]+$/g, '').trim();
-      return cleaned
+      let cleaned = i.replace(/^[\["\s]+|["\]\s]+$/g, "").trim();
+      return cleaned;
     })
+    .map((i) => {
+  return i
+    .replace(/\\u00bc|¼/gi, "1/4")
+    .replace(/\\u00bd|½/gi, "1/2")
+    .replace(/\\u00be|¾/gi, "3/4");
+})
     .filter((i) => i.length > 0);
 };
 
@@ -20,8 +26,8 @@ export const parseDirections = (directionsStr: string): string[] => {
     return directionsStr
       .split('",')
       .map((step) => {
-        let cleaned = step.replace(/^[\["\s]+|["\]\s]+$/g, '').trim();
-        cleaned = cleaned.replace(/^\d+\.\s*/, '');
+        let cleaned = step.replace(/^[\["\s]+|["\]\s]+$/g, "").trim();
+        cleaned = cleaned.replace(/^\d+\.\s*/, "");
         return cleaned;
       })
       .filter((step) => step.length > 0);
@@ -37,12 +43,12 @@ export const parseDirections = (directionsStr: string): string[] => {
   if (newlineParts.length > 1) {
     return newlineParts
       .map((step) => {
-        return step.trim().replace(/^\d+\.\s*/, '');
+        return step.trim().replace(/^\d+\.\s*/, "");
       })
       .filter((step) => step.length > 0);
   }
 
-  const trimmed = directionsStr.trim().replace(/^\d+\.\s*/, '');
+  const trimmed = directionsStr.trim().replace(/^\d+\.\s*/, "");
   return trimmed.length > 0 ? [trimmed] : [];
 };
 
@@ -60,7 +66,9 @@ export const convertRecipe = (backendRecipe: BackendRecipe): Recipe => {
   };
 };
 
-export const searchRecipes = async (ingredients: string[]): Promise<Recipe[]> => {
+export const searchRecipes = async (
+  ingredients: string[]
+): Promise<Recipe[]> => {
   const ingredientsString = ingredients.join(", ");
 
   const response = await fetch(`${API_BASE_URL}/search`, {

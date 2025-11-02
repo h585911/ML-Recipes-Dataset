@@ -108,7 +108,7 @@ if __name__ == "__main__":
     import sys, os
 
     # Kommenter ut portinnstillingen for å bruke standard 8080
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8080))
 
     if len(sys.argv) < 2:
         print(

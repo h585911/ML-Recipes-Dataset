@@ -1,6 +1,6 @@
 import { type BackendRecipe, type Recipe } from "../types/recipe";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export const parseIngredients = (ingredientsStr: string): string[] => {
   if (!ingredientsStr) return [];

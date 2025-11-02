@@ -105,7 +105,10 @@ def health_check():
 
 
 if __name__ == "__main__":
-    import sys
+    import sys, os
+
+    # Kommenter ut portinnstillingen for å bruke standard 8080
+    port = int(os.environ.get("PORT", 8080))
 
     if len(sys.argv) < 2:
         print(
@@ -135,4 +138,6 @@ if __name__ == "__main__":
     print("\nStarter Flask server...")
     print("API endpoint: POST http://localhost:8080/search")
     print('Example request body: {"ingredients": "chicken, rice, garlic"}')
-    app.run(debug=False, host="0.0.0.0", port=8080)
+
+    # Sett port til default '8080' hvis ikke spesifisert i miljøvariabler
+    app.run(debug=False, host="0.0.0.0", port=port)

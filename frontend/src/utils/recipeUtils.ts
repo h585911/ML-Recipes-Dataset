@@ -12,9 +12,9 @@ export const parseIngredients = (ingredientsStr: string): string[] => {
     })
     .map((i) => {
   return i
-    .replace(/\\u00bc|¼/gi, "1/4")
-    .replace(/\\u00bd|½/gi, "1/2")
-    .replace(/\\u00be|¾/gi, "3/4");
+    .replace(/\\u00bc/gi, '¼')
+    .replace(/\\u00bd/gi, '½') //Renderer heller tegnet, siden det blir escaped om vi prøver: '&#189;'
+    .replace(/\\u00be/gi, '¾');
 })
     .filter((i) => i.length > 0);
 };

@@ -1,21 +1,9 @@
 # ML-Recipes-Dataset
 
 ## Installasjon
-Først lag et virtual environment ved å kjøre følgende kommando i terminalen:
-`python -m venv venv`
-
-Deretter installere du nødvendige pakker ved å kjøre følgende kommando i terminalen:
-`pip install pandas numpy sentence-transformers scikit-learn flask flask-cors`
-
-Dersom dette er første gangen du kjører programmer, må du lage embeddings av datasettet ved å kjøre følgende kommando i terminalen:
-`python app.py data/recipes.csv --save-embeddings data/recipe_embeddings.pkl`
-
-Dette vil lage embeddings og starte serveren.
-
-Dersom du allerede har embeddings, kan du starte serveren ved å kjøre følgende kommando i terminalen:
-`python app.py data/recipes.csv --load-embeddings data/recipe_embeddings.pkl`
-
-Dette vil starte serveren.
+Bekreft at du er i mappen `/backend`.
+Deretter kjører du kommandoen under for å generere embeddings, og starte prosjektet:
+`./start.sh`
 
 ## Hvordan bruker du serveren?
 Send en POST request til: `http://localhost:8080/search`

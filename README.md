@@ -1,4 +1,4 @@
-# ML Recipes webapp
+# ML Recipes Webapplication
 Et lite fullstack prosjekt som anbefaler oppskrifter basert på ingredienser i kjøreskapet.
 Dette prosjektet splittet opp frontend og backend til egne mapper:
 - `backend` - Python (Flask). Embedder datasettet til vektor, og sender respons til frontend.
